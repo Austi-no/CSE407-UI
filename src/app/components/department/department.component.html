@@ -1,0 +1,141 @@
+<div class="row">
+  <div class="col-md-9">
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a>Home</a></li>
+        <li class="breadcrumb-item"><a>Department</a></li>
+        <li class="breadcrumb-item active">Manage-Department</li>
+      </ol>
+    </nav>
+
+  </div>
+
+  <div class="col-md-3">
+    <ol class="float-right">
+      <button class="btn btn-sm btn-primary" routerLink="/"><i class="fa fa-mail-reply"></i></button>
+    </ol>
+
+  </div>
+</div>
+
+<!--  -->
+
+
+<div class="card card-fluid">
+  <!-- .card-header -->
+
+  <!-- .card-body -->
+  <div class="card-body">
+
+    <div class="row">
+      <div class="col-xl-12 col-md-12">
+        <!-- .card -->
+
+        <div class="row">
+
+          <form class="col-md-8 col-sm-12 col-xs-12" [formGroup]="form">
+            <div class="row mb-4">
+              <div class="col">
+                <select class="form-control" formControlName="faculty">
+                  <option value="Select Faculty">Select Faculty</option>
+                  <option *ngFor="let list of facultyList" value="{{list.name}}">{{list.name}}</option>
+                </select>
+              </div>
+              <div class="col">
+                <input id="my-input" class="form-control" type="text" formControlName="name"
+                  placeholder="e.g Computer Science">
+              </div>
+              <div class="col">
+                <div class="btn btn-primary" (click)="create()">
+                  Create</div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+        <div class="card card-fluid">
+
+          <!-- .table-responsive -->
+          <div class="table-responsive">
+            <!-- .table -->
+            <table class="table table-bordered table-hover">
+              <!-- thead -->
+              <thead class="thead-light">
+                <tr>
+                  <th>#</th>
+                  <th>Department </th>
+                  <th>Faculty </th>
+                  <th> Date Created </th>
+                  <th>Action</th>
+                </tr>
+
+              </thead><!-- /thead -->
+              <!-- tbody -->
+              <tbody>
+
+                <tr *ngFor="let list of departmentList;let i=index">
+                  <td>{{i+1}}</td>
+                  <td> {{list.name}} </td>
+                  <td> {{list.faculty?.name}} </td>
+
+                  <td> {{list.dateCreated | date}}</td>
+                  <td>
+                    <a (click)="updateDept(list)" data-toggle="modal" data-target="#exampleModalCenter"
+                      class="btn btn-sm btn-icon btn-secondary mr-3">
+                      <i class="fa fa-edit"></i>
+                      <span class="sr-only">edit</span>
+                    </a>
+                    <a (click)="deleteDept(list)" class="btn btn-sm btn-icon btn-danger">
+                      <i style="color: white;" class="fa fa-trash"></i>
+                      <span class="sr-only">delete</span>
+                    </a>
+                  </td>
+                </tr>
+                <!-- /tr -->
+
+              </tbody><!-- /tbody -->
+            </table><!-- /.table -->
+          </div><!-- /.table-responsive -->
+
+
+        </div><!-- /.card -->
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Update</h5>
+        <hr>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label>Department</label>
+          <input type="text" class="form-control" [(ngModel)]="deptName" name="deptName" value="{{department?.name}}">
+          <label>Faculty</label>
+          <select class="form-control" [(ngModel)]="facultyName" name="facultyName">
+            <option selected value="{{department?.faculty?.name}}">{{department?.faculty?.name}}</option>
+            <option *ngFor="let list of facultyList" value="{{list?.name}}">{{list.name}}
+            </option>
+          </select>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="updateData()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

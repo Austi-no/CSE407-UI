@@ -1,3 +1,6 @@
+import { CourseComponent } from './components/course/course.component';
+import { DepartmentComponent } from './components/department/department.component';
+import { FacultyComponent } from './components/faculty/faculty.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './layouts/dashboard/dashboard.component';
@@ -11,6 +14,15 @@ const routes: Routes = [
     children: [
       {
         path: '', component: DashboardComponent
+      },
+      {
+        path: 'faculty', component: FacultyComponent
+      },
+      {
+        path: 'department', component: DepartmentComponent
+      },
+      {
+        path: 'course', component: CourseComponent
       },
 
 
