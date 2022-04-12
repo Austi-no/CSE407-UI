@@ -45,6 +45,8 @@ export class DepartmentComponent implements OnInit {
 
   create() {
     this.service.createDepartment(this.form.value).subscribe(res => {
+      console.log(res);
+
       if (res.success === true) {
         this.toastr.success("", res.message);
         this.form.reset()

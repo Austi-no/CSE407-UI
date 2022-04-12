@@ -47,7 +47,7 @@ export class FacultyComponent implements OnInit {
   }
 
   deleteFaculty(list: any) {
-    this.service.delete(list?.id).subscribe(res => {
+    this.service.delete(list.id).subscribe(res => {
       if (res.success === true) {
         this.toastr.success("", res.message);
         this.getFaculties()

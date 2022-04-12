@@ -1,64 +1,67 @@
 <header class="page-title-bar __web-inspector-hide-shortcut__">
-    <div class="d-flex flex-column flex-md-row">
-      <p class="lead">
-        <span class="font-weight-bold">Hi, Beni.</span> <span class="d-block text-muted">Here’s what’s happening with your business today.</span>
-      </p>
-    
-    </div>
-  </header>
-  <div class="page-section">
-    <!-- .section-block -->
-    <div class="section-block">
-      <!-- metric row -->
-      <div class="metric-row">
-        <div class="col-lg-9">
-          <div class="metric-row metric-flush">
-            <!-- metric column -->
-            <div class="col">
-              <!-- .metric -->
-              <a href="user-teams.html" class="metric metric-bordered align-items-center">
-                <h2 class="metric-label"> Faculties </h2>
-                <p class="metric-value h3">
-                  <sub><i class="oi oi-people"></i></sub> <span class="value">8</span>
-                </p>
-              </a> <!-- /.metric -->
-            </div><!-- /metric column -->
-            <!-- metric column -->
-            <div class="col">
-              <!-- .metric -->
-              <a href="user-projects.html" class="metric metric-bordered align-items-center">
-                <h2 class="metric-label"> Department </h2>
-                <p class="metric-value h3">
-                  <sub><i class="oi oi-fork"></i></sub> <span class="value">12</span>
-                </p>
-              </a> <!-- /.metric -->
-            </div><!-- /metric column -->
-            <!-- metric column -->
-            <div class="col">
-              <!-- .metric -->
-              <a href="user-tasks.html" class="metric metric-bordered align-items-center">
-                <h2 class="metric-label"> Courses </h2>
-                <p class="metric-value h3">
-                  <sub><i class="fa fa-tasks"></i></sub> <span class="value">64</span>
-                </p>
-              </a> <!-- /.metric -->
-            </div><!-- /metric column -->
-          </div>
-        </div><!-- metric column -->
-        <div class="col-lg-3">
-          <!-- .metric -->
-          <a href="user-tasks.html" class="metric metric-bordered">
-            <div class="metric-badge">
-              <span class="badge badge-lg badge-success"><span class="oi oi-media-record pulse mr-1"></span> ONGOING TASKS</span>
-            </div>
-            <p class="metric-value h3">
-              <sub><i class="oi oi-timer"></i></sub> <span class="value">8</span>
-            </p>
-          </a> <!-- /.metric -->
-        </div><!-- /metric column -->
-      </div><!-- /metric row -->
-    </div><!-- /.section-block -->
- 
- 
- 
+  <div class="d-flex flex-column flex-md-row">
+    <p class="lead">
+      <span class="font-weight-bold">WELCOME, Benard Augustine Adakole.</span> <span class="d-block text-muted">
+        CSE 407 PRESENTATION
+      </span>
+    </p>
+
   </div>
+</header>
+<div class="page-section">
+  <!-- .section-block -->
+  <div class="section-block">
+    <!-- metric row -->
+    <div class="metric-row">
+      <div class="col-lg-9">
+        <div class="metric-row metric-flush">
+          <!-- metric column -->
+          <div class="col">
+            <!-- .metric -->
+            <a routerLink="faculty" class="metric metric-bordered align-items-center">
+              <h2 class="metric-label"> Faculties </h2>
+              <p class="metric-value h3">
+                <sub><i class="oi oi-people"></i></sub> <span class="value">{{totalFaculties()}}</span>
+              </p>
+            </a> <!-- /.metric -->
+          </div><!-- /metric column -->
+          <!-- metric column -->
+          <div class="col">
+            <!-- .metric -->
+            <a routerLink="department" class="metric metric-bordered align-items-center">
+              <h2 class="metric-label"> Department </h2>
+              <p class="metric-value h3">
+                <sub><i class="oi oi-fork"></i></sub> <span class="value">{{totalDepartment()}}</span>
+              </p>
+            </a> <!-- /.metric -->
+          </div><!-- /metric column -->
+          <!-- metric column -->
+          <div class="col">
+            <!-- .metric -->
+            <a routerLink="course" class="metric metric-bordered align-items-center">
+              <h2 class="metric-label"> Courses </h2>
+              <p class="metric-value h3">
+                <sub></sub> <span class="value">{{totalCourses()}}</span>
+              </p>
+            </a> <!-- /.metric -->
+          </div><!-- /metric column -->
+        </div>
+      </div><!-- metric column -->
+      <div class="col-lg-3">
+        <!-- .metric -->
+        <a routerLink="/" class="metric metric-bordered">
+          <div class="metric-badge">
+            <span class="badge badge-lg badge-success"><span class="oi oi-media-record pulse mr-1"></span>CSE 407
+              ASSIGNMENT</span>
+          </div>
+          <p class="metric-value h3">
+            <sub><i class="oi oi-timer"></i></sub> <span class="value"></span>
+          </p>
+        </a> <!-- /.metric -->
+      </div><!-- /metric column -->
+    </div><!-- /metric row -->
+  </div><!-- /.section-block -->
+
+
+
+</div>
